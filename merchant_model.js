@@ -3,11 +3,13 @@ require('dotenv').config();
 const Pool = require('pg').Pool
 
 const pool = new Pool({
-    user: process.env.USER,
-    host: process.env.HOST,
-    database: process.env.DATABASE,
-    password: process.env.PASSWORD,
-    port: process.env.PORT,
+    connectionLimit: 10,
+    user: "postgres",
+    host: "factsDB.abcdefg.eu-west-2.rds.amazonaws.com",
+    database: "database_usuario",
+    password: "Tecnologia123*",
+    port: 5432,
+    debug: false
 });
 
 const getMerchants = () => {
